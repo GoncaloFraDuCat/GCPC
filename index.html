@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="images/final-gc-black-modified.png" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body>
+  <div id="desk-container">
+    <div id="pc-screen">
+      <iframe src="https://goncalofraducat.github.io" width="100%" height="300" style="border:none;">
+      </iframe>
+
+
+
+      <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (event) {
+            event.preventDefault();
+            const href = this.getAttribute('href');
+            const offsetTop = document.querySelector(href).offsetTop;
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+            window.scroll({
+              top: offsetTop - navbarHeight,
+              behavior: 'smooth'
+            });
+          });
+        });
+
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const welcomeTitle = document.querySelector('.welcome-title');
+
+          anime({
+            targets: welcomeTitle,
+            width: ['1%', '100%'],
+            height: '*',
+            backgroundColor: '#000000',
+            opacity: [0, 1],
+            duration: 4000,
+            easing: 'easeInOutQuad'
+          });
+
+          setTimeout(function () {
+            welcomeTitle.classList.add('expanding');
+          }, 50);
+        });
+      </script>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+      <script src="javascript.js"></script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var navbarLinks = document.querySelectorAll('.navbar-list li');
+          var currentBlinkingLink = null;
+
+          navbarLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+
+              // Stop the current blinking link
+              if (currentBlinkingLink) {
+                currentBlinkingLink.querySelector('.blinker').classList.remove('blinker');
+              }
+
+              // Start blinking effect on the clicked link
+              var blinker = document.createElement('span');
+              blinker.className = 'blinker';
+              this.insertBefore(blinker, this.firstChild);
+
+              currentBlinkingLink = this;
+
+              setTimeout(function () {
+                blinker.remove();
+                currentBlinkingLink = null;
+              }, 20000); // Match the animation duration (0.9s * 1000ms)
+            });
+          });
+        });
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const deskContainer = document.getElementById('desk-container');
+          const zoomButton = document.getElementById('zoom-button');
+
+          zoomButton.addEventListener('click', function () {
+            if (!deskContainer.classList.contains('zoomed')) {
+              deskContainer.classList.add('zoomed');
+              zoomButton.style.backgroundColor = '#555'; // Darken the button on click
+            } else {
+              deskContainer.classList.remove('zoomed');
+              zoomButton.style.backgroundColor = '#333'; // Reset button color
+            }
+          });
+        });
+
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const pcScreen = document.getElementById('pc-screen');
+          const toggleButton = document.getElementById('toggle-screen');
+
+          // Initialize the screen as visible
+          pcScreen.style.visibility = 'visible';
+
+          toggleButton.addEventListener('click', function () {
+            pcScreen.style.visibility = pcScreen.style.visibility === 'visible' ? 'hidden' : 'visible';
+            toggleButton.textContent = pcScreen.style.visibility === 'visible' ? 'Turn Off Screen' : 'Turn On Screen';
+          });
+        });
+      </script>
+
+
+    </div>
+    <button id="zoom-button">Zoom In</button>
+    <button id="toggle-screen">Turn On Screen</button>
+
+  </div>
+</body>
