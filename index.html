@@ -128,16 +128,23 @@
           pcScreen.style.visibility = 'visible';
 
           toggleButton.addEventListener('click', function () {
-            pcScreen.style.visibility = pcScreen.style.visibility === 'visible' ? 'hidden' : 'visible';
-            toggleButton.textContent = pcScreen.style.visibility === 'visible' ? 'Turn Off Screen' : 'Turn On Screen';
+            pcScreen.classList.toggle('screen-hidden');
+            toggleButton.textContent = pcScreen.classList.contains('screen-hidden') ? 'Power' : 'Power';
+
+            // Add a small delay to ensure the transition has started before toggling opacity
+            setTimeout(() => {
+              pcScreen.style.opacity = pcScreen.classList.contains('screen-hidden') ? '0' : '1';
+            }, 50);
           });
         });
       </script>
 
 
+
+
     </div>
-    <button id="zoom-button">Zoom In</button>
-    <button id="toggle-screen">Turn On Screen</button>
+    <button id="zoom-button">Zoom</button>
+    <button id="toggle-screen">Power</button>
 
   </div>
 </body>
