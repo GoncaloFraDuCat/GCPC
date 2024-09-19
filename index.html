@@ -109,10 +109,10 @@
           zoomButton.addEventListener('click', function () {
             if (!deskContainer.classList.contains('zoomed')) {
               deskContainer.classList.add('zoomed');
-              zoomButton.style.backgroundColor = '#555'; // Darken the button on click
+              zoomButton.style.backgroundColor = 'transparent'; // Darken the button on click
             } else {
               deskContainer.classList.remove('zoomed');
-              zoomButton.style.backgroundColor = '#333'; // Reset button color
+              zoomButton.style.backgroundColor = 'transparent'; // Reset button color
             }
           });
         });
@@ -126,25 +126,36 @@
 
           // Initialize the screen as visible
           pcScreen.style.visibility = 'visible';
+          pcScreen.style.opacity = '1';
 
           toggleButton.addEventListener('click', function () {
-            pcScreen.classList.toggle('screen-hidden');
-            toggleButton.textContent = pcScreen.classList.contains('screen-hidden') ? 'Power' : 'Power';
+            // Toggle the hidden class
+            pcScreen.classList.toggle('hidden');
 
             // Add a small delay to ensure the transition has started before toggling opacity
             setTimeout(() => {
-              pcScreen.style.opacity = pcScreen.classList.contains('screen-hidden') ? '0' : '1';
+              // Set opacity based on whether the screen is hidden or not
+              pcScreen.style.opacity = pcScreen.classList.contains('hidden') ? '0' : '1';
             }, 50);
+
+
+            // Add fade-in/fade-out animations
+            if (!pcScreen.classList.contains('hidden')) {
+              pcScreen.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+            } else {
+              pcScreen.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+            }
           });
         });
+
       </script>
 
 
 
 
     </div>
-    <button id="zoom-button">Zoom</button>
-    <button id="toggle-screen">Power</button>
+    <button id="zoom-button"><img src="images/lupa-camo.png" alt="" id="lupa-button"></button>
+    <button id="toggle-screen"><img src="images/power-camo.png" alt="" id="power-button"></button>
 
   </div>
 </body>

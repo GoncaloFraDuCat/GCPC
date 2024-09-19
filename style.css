@@ -14,8 +14,8 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('images/old_pc_1_lamp.png');
-
+    background-image: url('images/pc2.jpg');
+    background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transition: transform 0.5s ease-in-out;
@@ -23,10 +23,10 @@
 
   #pc-screen {
     position: absolute;
-    top: -30.5%;
-    left: 9.5%;
-    width: 83%;
-    height: 132vh;
+    top: -1.7%;
+    left: 19.05%;
+    width: 62%;
+    height: 97vh;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -37,42 +37,60 @@
 
   #zoom-button {
     position: fixed;
-    top: 61.9%;
-    left: 55.5%;
-    max-width: 94px;
+    top: 69.5%;
+    left: 42%;
+    max-width: 97px;
     transform: translate(-50%, -50%);
-    background-color: #333;
-    color: white;
+    background-color: #754D33;
+    color: yellow;
     border: none;
-    padding: 3px 14px 3px 14px;
+    padding: 0;
     cursor: pointer;
     font-size: 21px;
     transition: background-color 0.3s ease;
     border-radius: 5px;
     scrollbar-width: none;
+    width: 5%;
+    height: 6.5%;
+    padding-left: 0.5%;
+    padding-right: 3%;
+  }
+
+  #zoom-button:hover {
+    cursor: pointer;
   }
 
   .zoomed {
     transform-origin: center;
-    transform: scale(1.9) translateY(12.5%);
+    transform: scale(2.1) translateY(0.5%);
     font-size: 14px;
   }
 
   #toggle-screen {
+
     position: fixed;
-    top: 61.9%;
-    left: 61%;
-    max-width: 94px;
+    top: 69.5%;
+    left: 59%;
+    max-width: 97px;
     transform: translate(-50%, -50%);
-    background-color: #333;
-    color: white;
+    background-color: #754D33;
+    color: yellow;
     border: none;
-    padding: 3px 14px 3px 14px;
+    padding: 0;
     cursor: pointer;
     font-size: 21px;
     transition: background-color 0.3s ease;
     border-radius: 5px;
     scrollbar-width: none;
+    width: 5%;
+    height: 6.5%;
+    padding-left: 0.5%;
+    padding-right: 3%;
+
+  }
+
+  #toggle-screen:hover {
+    cursor: pointer;
   }
 
   .screen-on {
@@ -814,7 +832,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('images/old_pc_1_lamp.png');
+    background-image: url('images/pc2.jpg');
     background-size: contain;
     background-position: center;
     transition: transform 0.5s ease-in-out;
@@ -822,10 +840,10 @@
 
   #pc-screen {
     position: absolute;
-    top: -30%;
-    left: 3.2%;
-    width: 96%;
-    height: 132vh;
+    top: -2.5%;
+    left: 14%;
+    width: 72%;
+    height: 99vh;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -834,45 +852,66 @@
     transition: visibility 0.3s ease-out, opacity 0.3s ease-out;
   }
 
+
+
+
+
+
+
+
+
+
+
   #zoom-button {
     position: fixed;
-    top: 61.9%;
-    left: 55.5%;
-    max-width: 94px;
+    top: 69.5%;
+    left: 41%;
+    max-width: 97px;
     transform: translate(-50%, -50%);
-    background-color: #333;
-    color: white;
+    background-color: #754D33;
+    color: yellow;
     border: none;
-    padding: 1px 10px 1px 10px;
+    padding: 0;
     cursor: pointer;
     font-size: 21px;
     transition: background-color 0.3s ease;
     border-radius: 5px;
     scrollbar-width: none;
+    width: 5%;
+    height: 6.5%;
+    padding-left: 0.5%;
+    padding-right: 3%;
   }
 
   .zoomed {
     transform-origin: center;
-    transform: scale(1.9) translateY(12.5%);
+    transform: scale(2.1) translateY(0.5%);
     font-size: 14px;
   }
 
   #toggle-screen {
     position: fixed;
-    top: 61.9%;
-    left: 61%;
-    max-width: 94px;
+    top: 69.5%;
+    left: 60%;
+    max-width: 97px;
     transform: translate(-50%, -50%);
-    background-color: #333;
-    color: white;
+    background-color: #754D33;
+    color: yellow;
     border: none;
-    padding: 1px 10px 1px 10px;
+    padding: 0;
     cursor: pointer;
     font-size: 21px;
     transition: background-color 0.3s ease;
     border-radius: 5px;
     scrollbar-width: none;
+    width: 5%;
+    height: 6.5%;
+    padding-left: 1.5%;
+    padding-right: 4%;
   }
+
+  #power-button {}
+
 
   .screen-on {
     animation: fadeIn 0.5s ease-in-out;
@@ -1603,6 +1642,7 @@
     --secondary-color: #ffe7e5;
     --background-color: rgb(255, 249, 249);
     --text-color: #343a40;
+    scrollbar-width: none;
   }
 
   body {
@@ -2287,5 +2327,18 @@
     to {
       visibility: hidden;
     }
+  }
+
+  #zoom-button {
+    display: none;
+  }
+
+  #toggle-screen {
+    display: none;
+  }
+
+  .frame {
+    height: 100vh;
+    scrollbar-width: none;
   }
 }
