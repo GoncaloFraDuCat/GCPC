@@ -815,6 +815,48 @@
     transform: scale(1.5);
   }
 
+  /*toggle-screen css*/
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .invisible {
+    opacity: 0;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
+  .fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeOut {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
 }
 
 @media (min-width: 483px) and (max-width: 1800px) {

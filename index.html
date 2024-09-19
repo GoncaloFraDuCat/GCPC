@@ -120,31 +120,28 @@
       </script>
 
       <script>
+
         document.addEventListener('DOMContentLoaded', function () {
           const pcScreen = document.getElementById('pc-screen');
           const toggleButton = document.getElementById('toggle-screen');
 
-          // Initialize the screen as visible
-          pcScreen.style.visibility = 'visible';
-          pcScreen.style.opacity = '1';
+          // Initialize the screen as hidden
+          pcScreen.classList.add('hidden', 'invisible');
 
           toggleButton.addEventListener('click', function () {
-            // Toggle the hidden class
-            pcScreen.classList.toggle('hidden');
-
-            // Add a small delay to ensure the transition has started before toggling opacity
-            setTimeout(() => {
-              // Set opacity based on whether the screen is hidden or not
-              pcScreen.style.opacity = pcScreen.classList.contains('hidden') ? '0' : '1';
-            }, 50);
-
+            pcScreen.classList.toggle('visible');
+            pcScreen.classList.toggle('invisible');
 
             // Add fade-in/fade-out animations
-            if (!pcScreen.classList.contains('hidden')) {
-              pcScreen.style.animation = 'fadeIn 0.5s ease-in-out forwards';
-            } else {
+            if (!pcScreen.classList.contains('visible')) {
               pcScreen.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+            } else {
+              pcScreen.style.animation = 'fadeIn 0.5s ease-in-out forwards';
             }
+
+            // Reset button appearance
+            toggleButton.style.backgroundColor = toggleButton.classList.contains('pressed') ? '#754D33' : 'transparent';
+            toggleButton.classList.toggle('pressed');
           });
         });
 
